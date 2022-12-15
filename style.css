@@ -1,0 +1,155 @@
+/* Custom Properties */
+
+:root {
+    --clr-bright-orange: hsl(31, 77%, 52%);
+    --clr-dark-cyan: hsl(184, 100%, 22%);
+    --clr-dark-cyan-900: hsl(179, 100%, 13%);
+
+    --clr-neutral-white: hsla(0, 0%, 100%, 0.75);
+    --clr-light-gray: hsl(0, 0%, 95%);
+}   
+
+/* CSS Reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+html {
+    color-scheme: dark light;
+}
+
+body {
+    min-height: 100vh;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+/* General Style */
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: .938rem;
+    margin: 1.5em;
+    background-color: var(--clr-light-gray);
+    display: grid;
+    place-content: center;
+}
+
+/* Cards Style */
+
+.cards {
+    max-width: 1020px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.articles {
+    padding: 3em;
+}
+
+.article-1 {
+    background-color: var(--clr-bright-orange);
+}
+
+.article-2 {
+    background-color: var(--clr-dark-cyan);
+}
+
+.article-3 {
+    background-color: var(--clr-dark-cyan-900);
+}
+
+.article-heading {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--clr-light-gray);
+    padding: .8em 0;
+}
+
+.article-text {
+    color: var(--clr-neutral-white);
+    line-height: 1.5;
+    margin-bottom: 2em;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--clr-light-gray);
+    text-decoration: none;
+    padding: 1em 2.5em;
+    border: none;
+    border-radius: 2em;
+    transition: all .5s ease-in-out;
+}
+
+.article-1 .button {
+    color: var(--clr-bright-orange);
+}
+
+.article-2 .button {
+    color: var(--clr-dark-cyan);
+}
+
+.article-3 .button {
+    color: var(--clr-dark-cyan-900);
+}
+
+.button:hover {
+    outline: 2px solid var(--clr-light-gray);
+    background-color: transparent;
+    color: var(--clr-light-gray);
+}
+
+/* Breakpoints */
+
+@media (min-width: 600px) {
+    .article-heading {
+        font-size: 2.5rem;
+    }
+    .article-text {
+        font-size: 1.125rem;
+    }
+}
+
+@media (min-width: 800px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .articles {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .article-text {
+        margin-bottom: 5em;
+    }
+
+    .article-heading {
+        font-size: 2.25rem;
+    }
+
+    .article-text {
+        font-size: .935rem;
+    }
+}
